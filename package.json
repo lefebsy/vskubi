@@ -32,17 +32,18 @@
 	"main": "./out/extension",
 	"contributes": {
 		"menus": {
-            "view/item/context": [
-                {
-                    "command": "vs-kubi.generateKubeConfig",
-                    "when": "view == extension.vsKubernetesExplorer && viewItem =~ /^vsKubernetes\\.\\w*cluster.*$/i",
-                    "group": "4"
-			}],
+			"view/item/context": [
+				{
+					"command": "vs-kubi.generateKubeConfig",
+					"when": "view == extension.vsKubernetesExplorer && viewItem =~ /^vsKubernetes\\.\\w*cluster.*$/i",
+					"group": "4"
+				}
+			],
 			"view/title": [
 				{
-                    "command": "vs-kubi.generateKubeConfig",
-                    "when": "view == extension.vsKubernetesExplorer",
-                    "group": "2"
+					"command": "vs-kubi.generateKubeConfig",
+					"when": "view == extension.vsKubernetesExplorer",
+					"group": "2"
 				}
 			]
 		},
@@ -54,10 +55,10 @@
 			}
 		],
 		"keybindings": [
-            {
-                "command": "vs-kubi.generateKubeConfig",
-                "key": "ctrl+k ctrl+i",
-                "mac": "cmd+k cmd+i"
+			{
+				"command": "vs-kubi.generateKubeConfig",
+				"key": "ctrl+k ctrl+i",
+				"mac": "cmd+k cmd+i"
 			}
 		],
 		"configuration": {
@@ -67,15 +68,38 @@
 				"vs-kubi": {
 					"description": "Advanced settings, please open the ReadMe file to set the configuration from the example",
 					"type": "object",
-					"default":
-					{
-						"variables":{"$kubi-exe-path":"kubi","$username":"me@abc.com","$kubi-url":"https://kubi.cluster1.example.com"},
-						"commands":[{
+					"default": {
+						"variables": {
+							"$kubi-exe-path": "kubi",
+							"$username": "me@abc.com",
+							"$kubi-url": "https://kubi.cluster1.example.com"
+						},
+						"commands": [
+							{
 								"identifier": "generateKubeConfig",
 								"description": "Generate kubernetes configuration",
 								"command": "$kubi-exe-path --username $username --password $password --kubi-url $kubi-url --generate-config",
-								"form":[{"variable":"$username","question":"Kubi login (name@domain.com)"},{"variable":"$password","password":true,"question":"Kubi password"},{"variable":"$kubi-url","question":"Select Kubi endpoint","options":["https://kubi.cluster1.example.com","https://kubi.cluster2.example.com"]}]
-						}]
+								"form": [
+									{
+										"variable": "$username",
+										"question": "Kubi login (name@domain.com)"
+									},
+									{
+										"variable": "$password",
+										"password": true,
+										"question": "Kubi password"
+									},
+									{
+										"variable": "$kubi-url",
+										"question": "Select Kubi endpoint",
+										"options": [
+											"https://kubi.cluster1.example.com",
+											"https://kubi.cluster2.example.com"
+										]
+									}
+								]
+							}
+						]
 					},
 					"properties": {
 						"variables": {
