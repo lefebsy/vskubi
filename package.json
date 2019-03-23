@@ -1,0 +1,162 @@
+{
+	"name": "vs-kubi",
+	"displayName": "Kubi",
+	"description": "Kubernetes CA-GIP/Kubi CLI wrapper for VSCode",
+	"icon": "resources/logo/logo-128x128.png",
+	"version": "0.0.1",
+	"publisher": "lefebsy",
+	"bugs": {
+		"url": "https://github.com/lefebsy/vskubi/issues"
+	},
+	"homepage": "https://github.com/lefebsy/vskubi/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lefebsy/vskubi.git"
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Kubernetes",
+		"k8s",
+		"Kubi"
+	],
+	"activationEvents": [
+		"*",
+		"onCommand:vs-kubi.run"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"menus": {
+            "view/item/context": [
+                {
+                    "command": "vs-kubi.generateKubeConfig",
+                    "when": "view == extension.vsKubernetesExplorer && viewItem =~ /^vsKubernetes\\.\\w*cluster.*$/i",
+                    "group": "4"
+			}],
+			"view/title": [
+				{
+                    "command": "vs-kubi.generateKubeConfig",
+                    "when": "view == extension.vsKubernetesExplorer",
+                    "group": "2"
+				}
+			]
+		},
+		"commands": [
+			{
+				"category": "Kubi",
+				"command": "vs-kubi.generateKubeConfig",
+				"title": "Generate with Kubi a kubeconfig in $home/.kube/config"
+			}
+		],
+		"keybindings": [
+            {
+                "command": "vs-kubi.generateKubeConfig",
+                "key": "ctrl+k ctrl+i",
+                "mac": "cmd+k cmd+i"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Kubi configuration for VSCode",
+			"properties": {
+				"vs-kubi": {
+					"description": "Advanced settings, please open the ReadMe file to set the configuration from the example",
+					"type": "object",
+					"default":
+					{
+						"variables":{"$kubi-exe-path":"kubi","$username":"me@abc.com","$kubi-url":"https://kubi.cluster1.example.com"},
+						"commands":[{
+								"identifier": "generateKubeConfig",
+								"description": "Generate kubernetes configuration",
+								"command": "$kubi-exe-path --username $username --password $password --kubi-url $kubi-url --generate-config",
+								"form":[{"variable":"$username","question":"Kubi login (name@domain.com)"},{"variable":"$password","password":true,"question":"Kubi password"},{"variable":"$kubi-url","question":"Select Kubi endpoint","options":["https://kubi.cluster1.example.com","https://kubi.cluster2.example.com"]}]
+						}]
+					},
+					"properties": {
+						"variables": {
+							"type": "object",
+							"description": "Name => value mapping of variables available to all scripts."
+						},
+						"commands": {
+							"type": "array",
+							"description": "Kubi type of commands",
+							"items": {
+								"type": "object",
+								"properties": {
+									"identifier": {
+										"type": "string",
+										"description": "Identifier used to do key binding. Use alphanumerical and hyphen/underscore only.",
+										"required": true
+									},
+									"description": {
+										"type": "string",
+										"description": "Description of the command.",
+										"required": true
+									},
+									"command": {
+										"type": "string",
+										"description": "Command to execute (with variables).",
+										"required": true
+									},
+									"form": {
+										"type": "array",
+										"description": "A list of questions to ask in order to obtain values for variables.",
+										"items": {
+											"type": "object",
+											"properties": {
+												"variable": {
+													"type": "string",
+													"description": "The variable name.",
+													"required": true
+												},
+												"question": {
+													"type": "string",
+													"description": "The question to ask the user.",
+													"required": true
+												},
+												"password": {
+													"type": "boolean",
+													"description": "*** text during input"
+												},
+												"default": {
+													"type": "string",
+													"description": "The default value to put in the field. Only for text inputs."
+												},
+												"options": {
+													"type": "array",
+													"items": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test",
+		"package": "vsce package"
+	},
+	"devDependencies": {
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6",
+		"tslint": "^5.8.0",
+		"@types/node": "^7.0.43",
+		"@types/mocha": "^2.2.42"
+	}
+}
