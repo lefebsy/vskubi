@@ -8,7 +8,7 @@
 	"bugs": {
 		"url": "https://github.com/lefebsy/vskubi/issues"
 	},
-	"homepage": "https://github.com/lefebsy/vskubi/blob/master/README.md",
+	"homepage": "https://raw.githubusercontent.com/lefebsy/vskubi/master/README.md",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/lefebsy/vskubi.git"
