@@ -123,35 +123,4 @@ export class CommandRunner {
 		});
 	}
 
-	public runGenerateKubeConfig() {
-		let kubiPath = workspace.getConfiguration().get<string>('kubiPath')||"";
-		let kubiPassword = workspace.getConfiguration().get<string>('kubiPassword')||"";
-
-		if (kubiPath === "") {
-			kubiPath = "truc";
-		}
-
-		if (kubiPassword === "") {
-
-		}
-		window.showInputBox({
-			prompt: "Please type your password",
-			value: "coucou",
-			password: true,
-			ignoreFocusOut: true,
-			})
-		.then(password => {
-			if (!password) {
-				let cmd = kubiPath + " --password " + password;
-				child_process.exec(cmd, (err, stdout, stderr) => {
-					if (err) {
-						vscode.window.showErrorMessage(stdout);		
-						return;
-					}
-					vscode.window.showInformationMessage(stdout);
-					vscode.window.showInformationMessage(cmd);
-				});
-			}
-		});
-	}
 }
