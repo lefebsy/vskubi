@@ -7,5 +7,15 @@
     "search.exclude": {
         "out": true, // set this to false to include "out" folder in search results
         "node_modules": true 
-    }
+   },
+"typescript.tsdk": "node_modules/typescript/lib",
+"workbench.colorCustomizations": {
+    "activityBar.background": "#f0a4af",
+    "activityBar.activeBorder": "#278917",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#278917",
+    "activityBarBadge.foreground": "#e7e7e7"
+},
+"peacock.color": "#e97889"
 }

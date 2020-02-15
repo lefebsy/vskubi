@@ -1,5 +1,8 @@
+# Newer and better version :-)
 
-# VS Code Kubi extension
+A newer version with a better user experience, more features and Theia support is now available. This one is freezed, no more evolutions. You should consider to swith to VSCode :  [Kubi-Lite](https://marketplace.visualstudio.com/items?itemName=lefebsy.vskubi-lite)
+
+## VS Code Kubi extension
 
 GUI integration in VSCode of Kubi CLI provided by CA-GIP at <https://github.com/ca-gip/kubi>
 Thanks to the extension "Run Me" available at <https://github.com/tomzx/vscode-run-me/blob/master/README.md>
