@@ -3,7 +3,7 @@
 	"displayName": "Kubi",
 	"description": "Kubernetes CA-GIP/Kubi CLI wrapper for VSCode",
 	"icon": "resources/logo/logo-128x128.png",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "lefebsy",
 	"bugs": {
 		"url": "https://github.com/lefebsy/vskubi/issues"
@@ -179,7 +179,7 @@
 	"devDependencies": {
 		"typescript": "^2.6.1",
 		"vscode": "^1.1.6",
-		"tslint": "^5.8.0",
+		"tslint": "^6.0.0",
 		"@types/node": "^7.0.43",
 		"@types/mocha": "^2.2.42"
 	},
