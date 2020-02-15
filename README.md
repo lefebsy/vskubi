@@ -1,6 +1,6 @@
 # Newer and better version :-)
 
-A newer version with a better user experience, more features and Theia support is now available. This one is freezed, no more evolutions. You should consider to swith to VSCode :  [Kubi-Lite](https://marketplace.visualstudio.com/items?itemName=lefebsy.vskubi-lite)
+A newer version with a better user experience, more features and Theia support is now available. This one is freezed, no more evolutions. You should consider to switch to VSCode :  [Kubi-Lite](https://marketplace.visualstudio.com/items?itemName=lefebsy.vskubi-lite)
 
 ## VS Code Kubi extension
 
