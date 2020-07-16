@@ -3,7 +3,7 @@
 	"displayName": "Kubi",
 	"description": "Kubernetes CA-GIP/Kubi CLI wrapper for VSCode",
 	"icon": "resources/logo/logo-128x128.png",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "lefebsy",
 	"bugs": {
 		"url": "https://github.com/lefebsy/vskubi/issues"
@@ -65,6 +65,12 @@
 			"type": "object",
 			"title": "Kubi configuration for VSCode",
 			"properties": {
+				"vs-kubi.warningEOL": {
+					"type": "boolean",
+					"scope": "resource",
+					"default": false,
+					"description": "Warning : this extension v0.0.5 will no longer receive security fix. If you feel concerned, you should uninstall it and switch to kubi-lite instead, a better extension with many more features. By checking this box you disable the startup notification and confirm you were warned."
+				},
 				"vs-kubi": {
 					"description": "Advanced settings, please open the ReadMe file to set the configuration from the example",
 					"type": "object",
@@ -178,8 +184,9 @@
 	},
 	"devDependencies": {
 		"typescript": "^2.6.1",
-		"vscode": "^1.1.6",
-		"tslint": "^6.0.0",
+		"@types/vscode": "^1.30.0",
+		"vscode-test": "^1.4.0",
+		"tslint": "^6.1.2",
 		"@types/node": "^7.0.43",
 		"@types/mocha": "^2.2.42"
 	},

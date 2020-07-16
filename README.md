@@ -1,25 +1,31 @@
-# Newer and better version :-)
+# WARNING - EOL Security fix
 
-A newer version with a better user experience, more features and Theia support is now available. This one is freezed, no more evolutions. You should consider to switch to VSCode :  [Kubi-Lite](https://marketplace.visualstudio.com/items?itemName=lefebsy.vskubi-lite)
+This extension v0.0.5 will no longer receive security fix. If you feel concerned, you should uninstall it and switch to kubi-lite instead, a better extension with many more features.
 
-## VS Code Kubi extension
+## __Kubi-Lite__ : Newer and better version :-)
+
+A newer version with a better user experience, more features and Theia support is now available. This one is freezed, no more evolutions. __You should consider to switch to [Kubi-Lite](https://marketplace.visualstudio.com/items?itemName=lefebsy.vskubi-lite)__
+
+## Informations :
+
+### VS Code Kubi extension
 
 GUI integration in VSCode of Kubi CLI provided by CA-GIP at <https://github.com/ca-gip/kubi>
 Thanks to the extension "Run Me" available at <https://github.com/tomzx/vscode-run-me/blob/master/README.md>
 
-## Getting started
+### Getting started
 
 1. Download Kubi CLI an put it in your path, or set the path in the settings
 2. Use `ctrl+k ctrl+i` to invoke the generation of the KubeConfig in your $home. Or use the palette command and type `ctrl+p` then `>kubi`
 3. Answer the dialogs box and that's all
 
-## Integration with Kubernetes extension
+### Integration with Kubernetes extension
 
 - <https://github.com/Azure/vscode-kubernetes-tools>
 - The command is added on the contextuals menus hover the "clusters view"
 ![screencast](DemoHelp.gif)
 
-## Configuration
+### Configuration
 
 ```json
 "vs-kubi": {
@@ -55,13 +61,13 @@ Thanks to the extension "Run Me" available at <https://github.com/tomzx/vscode-r
 }
 ```
 
-## Advanced configuration tweak
+### Advanced configuration tweak
 
 - You can change the default key binding `ctrl+K ctrl+i` in the VSCode settings
 - Tired of the input boxes ? You can remove any "input step" by deleting the section in the "form" configuration and fix your value in the "variables" section instead
 - Need to use Kubi in various way ? Clone the default item in the `commands` array sections in settings, type you new identifier instead of `generateKubeConfig`, that's all ! If you need more help, read the great `Run me` documentation at <https://github.com/tomzx/vscode-run-me/blob/master/README.md>
 
-## License
+### License
 
 - The code is licensed under the [MIT license](http://choosealicense.com/licenses/mit/). See [LICENSE](LICENSE).
 - Logo is CA-GIP/Kubi logo : <https://github.com/ca-gip/kubi>
